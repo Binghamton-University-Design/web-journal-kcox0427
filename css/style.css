@@ -4,6 +4,8 @@ body {
     font-family: 'Gill Sans';
     background-color: black;
     color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 @keyframes TitleColors {
@@ -15,7 +17,15 @@ body {
     82.5% {color: purple;}
 }
 
-#Title {
+@keyframes RunningText {
+    0%, 100%, {opacity: 1; left: -50vw;}
+    75% {opacity: 1; left: 102vw;}
+    76% {opacity: 0; left: 102vw;}
+    77% {opacity: 0; left: -50vw;}
+    78% {opacity: 1; left: -50vw;}
+}
+
+.Title {
     font-size: 15vh;
     position: relative;
     width: calc(100% - 4vh);
@@ -26,10 +36,42 @@ body {
     animation: TitleColors 4s infinite linear;
 }
 
+.Alternate {
+    font-size: 10vh;
+    position: relative;
+    width: calc(100% - 4vh);
+    text-align: left;
+    top: 4vh;
+    left: -50vw;
+    color: White;
+    animation: RunningText 6s infinite linear;
+    padding-bottom: 6vh;
+}
+
 p {
     position: relative;
     top: 1vh;
     left: 2vh;
     width: calc(100% - 4vh);
     font-size: 4vh;
+    font-weight: 200;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+    transition: color 0.25s ease-out, font-weight 0.25s ease-out;
+}
+
+a:hover {
+    color: lightblue;
+    font-weight: 600;
+}
+
+.Veggie {
+    position: relative;
+    top: 4vh;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    max-height: 40vh;
 }
