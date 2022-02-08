@@ -19,10 +19,21 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    outline: 0.5vh solid rgba(255, 240, 227, 0.4);
     border-radius: 0 0 2vh 2vh;
+    outline: 0.5vh solid rgba(255, 240, 227, 0.4);
     box-shadow: 0 0 8vh 0vh rgba(255, 240, 227, 0.6) inset;
     color: var(--white);
+    transition: box-shadow .15s linear, outline 0.15s linear;
+}
+
+#Header:hover {
+    outline: 0.5vh solid rgba(255, 240, 227, 0.6);
+    box-shadow: 0 0 10vh 0vh rgba(255, 240, 227, 0.8) inset;
+}
+
+#Header:active {
+    outline: 0.5vh solid rgba(255, 240, 227, 0.8);
+    box-shadow: 0 0 12vh 0vh rgba(255, 240, 227, 1) inset;
 }
 
 #Title {
@@ -144,32 +155,43 @@ body {
 
 #EntryBannerWrapper {
     position: absolute;
+    top: 15vh;
+    left: 2.5%;
+    width: 95%;
+    height: 40vh;
+    background-color: rgba(255,255,255, 0.25);
+    border-radius: 5vh;
+    overflow: hidden;
 }
 
 #EntryPageTitle {
     position: absolute;
-    top: 30vh;
-    left: 10vh;
+    top: 50%;
+    left: 25%;
     width: calc(50% - 10vh);
-    transform: translate(0, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 7.5vh;
+    font-size: 8.5vh;
+    font-weight: 500;
+    line-height: 100%;
 }
 
 #EntryPageImage {
     position: absolute;
-    right: 10vh;
-    width: calc(50% - 10vh);
-    max-height: 50vh;
+    top: 50%;
+    right: 25%;
+    transform: translate(50%, -50%);
+    width: 45%;
 }
 
 #EntryPageDescription {
     position: absolute;
     width: calc(100% - 10vh);
     left: 5vh;
-    top: 50vh;
-    font-size: 4vh;
+    top: 55vh;
+    font-size: 2.75vh;
     font-weight: 300;
+    font-family: "Source Serif 4";
 }
 
 #BackButton {

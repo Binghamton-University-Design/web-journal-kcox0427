@@ -8,6 +8,9 @@ function boot(){
     for(let i = 0; i < 10; i++){
         createEntry(i+1);
     }
+    document.getElementById("Header").addEventListener("mouseup", () => {
+        closeEntry();
+    });
     document.getElementById("EntryGrid").style.height = (document.getElementById("EntryGrid").children/4)*45 + "vh";
     checkGrid();
     window.onresize = checkGrid;
@@ -51,6 +54,16 @@ function openEntry(index){
     setTimeout(() => {
         document.getElementById("EntryPageWrapper").style.opacity = "1";
         document.getElementById("EntryPageWrapper").style.pointerEvents = "all";
+    }, 150);
+}
+
+function closeEntry(){
+    document.getElementById("EntryPageWrapper").style.opacity = "0";
+    document.getElementById("EntryPageWrapper").style.pointerEvents = "none";
+    
+    setTimeout(() => {
+        document.getElementById("Main").style.opacity = "1";
+        document.getElementById("Main").style.pointerEvents = "all";
     }, 150);
 }
 
