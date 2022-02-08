@@ -1,22 +1,45 @@
-<!-- HTML -->
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="js/main.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/grid.css">
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-	</head>
+<head>
+    <!--
+        https://binghamton-university-design.github.io/web-journal-kcox0427/
+    -->
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href = "main.css">
+    
+    <meta name="description" content="This is my web journal.">
+    <meta name="author" content="Kevin Lahoda">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<body>
-		<div class = "Title">Kevin Cox</div>
-        <p>This is my Web Journal.</p>
-        <p>This is my second edit.</p>
-        <div class = "Alternate">Kevin Cox Again</div>
-        <p>This is my third edit. <a href = "https://www.google.com/" target = "_blank" title = "Google">This is a link.</a></p>
-        <img class = "Veggie" src = "images/carrot.png">
-	</body>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
 
+<body>
+    <div id = "Main">
+        <div id = "EntryGrid"></div>
+    </div>
+    
+    <div id = "EntryPageWrapper">
+        <div id = "EntryPage">
+            <div id = "BackButton"></div>
+            <div id = "EntryBannerWrapper">
+                <span id = "EntryPageTitle">Page Title</span>
+                <img id = "EntryPageImage" src = "https://via.placeholder.com/350x150">
+            </div>
+            <p id = "EntryPageDescription">Entry Description</p>
+        </div>
+    </div>
+    
+    <div id = "Header"><h id = "Title">Kevin Cox<span id = "Subtitle"><br>Web Journal - ARTS 486</span></h></div>
+    
+    <div id = "Footer"></div>
+    
+    <script src = "main.js"></script>
+</body>
 </html>
