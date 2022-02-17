@@ -1,12 +1,13 @@
 // JavaScript Document
 
-
+var entriesJSON;
 
 window.onload = boot();
 
-function boot(){
-    for(let i = 0; i < 10; i++){
-        createEntry(i+1);
+async function boot(){
+    entriesJSON = getEntries();
+    for(let i = 0; i < entriesJSON.length; i++){
+        createEntry(i);
     }
     document.getElementById("Header").addEventListener("mouseup", () => {
         closeEntry();
@@ -14,6 +15,7 @@ function boot(){
     document.getElementById("EntryGrid").style.height = (document.getElementById("EntryGrid").children/4)*45 + "vh";
     checkGrid();
     window.onresize = checkGrid;
+    document.body.style.opacity = "1"
 }
 
 function checkGrid(){
@@ -33,10 +35,10 @@ function createEntry(index){
     newEntry.style.boxShadow = "0 0 30vh 5vh " + randomColor + "inset, 0 0 2vh 0.5vh " + randomColor.substring(0, randomColor.length-2) + "0.75)";
     
     newEntryTitle.classList.add("EntryTitles")
-    newEntryTitle.innerHTML = "Entry " + index + " - ";
+    newEntryTitle.innerHTML = entriesJSON[index].title;
     newEntry.append(newEntryTitle);
     
-    newEntryImage.src = "https://via.placeholder.com/350x150";
+    newEntryImage.src = entriesJSON[index].image;
     newEntryImage.classList.add("EntryImages");
     newEntry.append(newEntryImage);
     
@@ -48,8 +50,12 @@ function createEntry(index){
 }
 
 function openEntry(index){
+    document.getElementById("EntryPageWrapper").scrollTop = 0;
     document.getElementById("Main").style.opacity = "0";
     document.getElementById("Main").style.pointerEvents = "none";
+    document.getElementById("EntryPageDescription").innerHTML = entriesJSON[index].text;
+    document.getElementById("EntryPageImage").src = entriesJSON[index].image;
+    document.getElementById("EntryPageTitle").innerHTML = entriesJSON[index].title;
     
     setTimeout(() => {
         document.getElementById("EntryPageWrapper").style.opacity = "1";
@@ -66,4 +72,5 @@ function closeEntry(){
         document.getElementById("Main").style.pointerEvents = "all";
     }, 150);
 }
+
 
