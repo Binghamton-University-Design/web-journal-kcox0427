@@ -15,7 +15,7 @@ async function boot(){
     document.getElementById("EntryGrid").style.height = (document.getElementById("EntryGrid").children/4)*45 + "vh";
     checkGrid();
     window.onresize = checkGrid;
-    document.body.style.opacity = "1"
+    document.body.style.opacity = "1";
 }
 
 function checkGrid(){
